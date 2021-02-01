@@ -26,40 +26,33 @@ reloadIcon.addEventListener('click', reloadPage);
 order.addEventListener('change', orderItems);
 
 
-function addNewTask(e) {
+function addNewTask(e){
 
-    e.preventDefault(); //disable form submission
+    e.preventDefault();
 
+    // if (taskInput.value===""){
+    //      alert("Add New Task");
+    //      return;
+    // }
 
-    // Check empty entry
-    if (taskInput.value === '') {
-        taskInput.style.borderColor = "red";
-
-        return;
-    }
-
-    // Create an li element when the user adds a task 
-    const li = document.createElement('li');
-    // Adding a class
-    li.className = 'collection-item';
-    // Create text node and append it 
-    li.appendChild(document.createTextNode(taskInput.value));
-    // Create new element for the link 
-    const link = document.createElement('a');
-    // Add class and the x marker for a 
-    link.className = 'delete-item secondary-content';
-    link.innerHTML = '<i class="fa fa-remove"></i>';
-    // Append link to li
-    li.appendChild(link);
-    // Append to UL 
-    taskList.appendChild(li);
-    taskInput.value ="";
-    let date = new Date().getTime();
-    li.dataset.date = date;
-
-    orderItems();
-
-}
+     // Create an li element when the user adds a task 
+     const li = document.createElement('li');
+     // Adding a class
+     li.className = 'collection-item';
+     // Create text node and append it 
+     li.appendChild(document.createTextNode(taskInput.value));
+     // Create new element for the link 
+     const link = document.createElement('a');
+     // Add class and the x marker for a 
+     link.className = 'delete-item secondary-content';
+     link.innerHTML = '<i class="fa fa-remove"></i>';
+     // Append link to li
+     li.appendChild(link);
+     // Append to ul 
+     taskList.appendChild(li);
+ 
+     
+ }
  
    
    
@@ -80,7 +73,27 @@ function clearAllTasks() {
 
 function filterTasks(e) {
 
-    console.log("HI");
+    /*  
+    Instruction for Handling the Search/filter 
+    
+    1. Receive the user input from the text input 
+    2. Assign it to a variable so the you can reuse it 
+    3. Use the querySelectorAll() in order to get the collection of li which have  .collection-item class 
+    4. Iterate over the collection item Node List using forEach
+    5. On each element check if the textContent of the li contains the text from User Input  [can use indexOf]
+    6 . If it contains , change the display property of the element as block , else none
+    
+    */
+   var userInput=filter.value;   
+   var list=document.querySelectorAll('.collection-item')
+   list.forEach(element=> {
+       if (element.firstChild.textContent.indexOf(userInput)) {
+           element.style.display="block";
+           
+       } else {
+           element.style.display="none";
+       }
+   })
 
 }
 function removeTask(e) {
