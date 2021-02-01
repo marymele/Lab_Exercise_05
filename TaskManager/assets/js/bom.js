@@ -127,5 +127,35 @@ function showProtocol(){
         return cookie;
     }
 
+    function showHeight(){
+        var height = document.getElementsByClassName("badge-height")[0];
+        height.innerHTML = window.outerHeight;
+        return height;
+    }
     
+    function showWidth(){
+        var width = document.getElementsByClassName("badge-width")[0];
+        width.innerHTML = window.outerWidth;
+        return width;
+    }
+    
+    function showPixelDepth(){
+        var pixel = document.getElementsByClassName("badge-pixelDepth")[0];
+        pixel.innerHTML = screen.pixelDepth;
+        return pixel;
+    }
+
+    function showLength(){
+        var length = document.getElementsByClassName("badge-length")[0];
+        length.innerHTML = history.length;
+        return length;
+    }
+    
+    function showState(){
+        var state = document.getElementsByClassName("badge-state")[0];
+        state.innerHTML = history.state;
+        return state;
+    }
+
+
     
