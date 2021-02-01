@@ -67,3 +67,34 @@ Length.addEventListener("click",showLength);
 State.addEventListener("click",showState);
 
 
+function showHref(){
+    var href = document.getElementsByClassName("badge")[0];
+    href.innerHTML = document.URL;
+    return href;
+    }
+    
+function showProtocol(){
+    var protocol = document.getElementsByClassName("protocol-badge")[0];
+    protocol.innerHTML = location.protocol;
+    return protocol;
+    }
+    
+    function showHost(){
+        var host = document.getElementsByClassName("host-badge")[0];
+        host.innerHTML = location.host;
+        return host;
+    }
+    
+    function showPort(){
+        var answer = document.getElementsByClassName("port-badge")[0];
+        answer.innerHTML = location.port;
+        return answer;
+    }
+    
+    function showHostName(){
+        var hostName = document.getElementsByClassName("hostName-badge")[0];
+        hostName.innerText = location.hostname;
+        return hostName;
+    }
+
+    
