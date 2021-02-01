@@ -86,15 +86,46 @@ function showProtocol(){
     }
     
     function showPort(){
-        var answer = document.getElementsByClassName("port-badge")[0];
-        answer.innerHTML = location.port;
-        return answer;
+        var port = document.getElementsByClassName("port-badge")[0];
+        port.innerHTML = location.port;
+        return port;
     }
     
     function showHostName(){
         var hostName = document.getElementsByClassName("hostName-badge")[0];
-        hostName.innerText = location.hostname;
+        hostName.innerHTML = location.hostname;
         return hostName;
     }
 
+    function showAppName(){
+        var appName = document.getElementsByClassName("appName-badge")[0]
+        appName.innerHTML = window.navigator.appName;
+        return appName;
+    }
+    
+    function showAppVersion(){
+        var appVersion = document.getElementsByClassName("appVersion-badge")[0]
+        appVersion.innerHTML = window.navigator.appVersion;
+        return appVersion;
+    }
+    
+    function showPlatform(){
+        var platform = document.getElementsByClassName("platform-badge")[0]
+        platform.innerHTML = window.navigator.platform;
+        return platform;
+    }
+    
+    function showLanguage(){
+        var language = document.getElementsByClassName("language-badge")[0]
+        language.innerHTML = window.navigator.language;
+        return language;
+    }
+    
+    function showCookieEnabled(){
+        var cookie = document.getElementsByClassName("cookieEnabled-badge")[0]
+        cookie.innerHTML = window.navigator.cookieEnabled;
+        return cookie;
+    }
+
+    
     
