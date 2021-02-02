@@ -24,9 +24,13 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     function divideNum(num1,num2){
-        if (num2!== 0){
+        if (num2!= 0){
             let Quot= parseFloat(num1) /parseFloat(num2);
             return Quot;
+        }else{
+            console.log("Syntax error: zero as denominator");
+            return "";
+            
         }
     }
 

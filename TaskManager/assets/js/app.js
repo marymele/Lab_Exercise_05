@@ -93,7 +93,7 @@ function filterTasks(e) {
    var userInput=filter.value;   
    var list=document.querySelectorAll('.collection-item')
    list.forEach(element=> {
-       if (element.firstChild.textContent.indexOf(userInput)) {
+       if (element.firstChild.textContent.includes(userInput)) {
            element.style.display="block";
            
        } else {

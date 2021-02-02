@@ -6,7 +6,7 @@ Location , Navigator , screen , Window
 Follow the Instruction on the comments 
 
 1. Declare the UI Variables for selecting on the elements 
-2. Use the innerHTML property to display the result on each element 
+2. Use the children[0].innerText property to display the result on each element 
 3. The Text  of the elements will lead you what bom information is required 
 
 Adding Extra is Possible if you want to explore more ...
@@ -32,19 +32,19 @@ const AppName = document.querySelector(".AppName");
 const AppVersion = document.querySelector(".AppVersion");
 const Platform = document.querySelector(".Platform");
 const Language = document.querySelector(".Language");
-const CookieEnabled = document.querySelector(".CookieEnabled");
+const Cookie = document.querySelector(".CookieEnabled");
 
     //Screen Information
 const Height = document.querySelector(".Height");
 const Width = document.querySelector(".Width");
-const PixelDepth = document.querySelector(".PixelDepth");
+const Pixel = document.querySelector(".PixelDepth");
 
     //Browsing History Information
 const Length=document.querySelector(".Length");
 const State=document.querySelector(".State");
 
 
-// Display the BOM Information on the innerHTML of the elements
+// Display the BOM Information on the children[0].innerText of the elements
 
 
 Href.addEventListener("click",showHref);
@@ -57,104 +57,80 @@ AppName.addEventListener("click",showAppName);
 AppVersion.addEventListener("click",showAppVersion);
 Platform.addEventListener("click",showPlatform);
 Language.addEventListener("click",showLanguage);
-CookieEnabled.addEventListener("click",showCookieEnabled);
+Cookie.addEventListener("click",showCookieEnabled);
 
 Height.addEventListener("click",showHeight);
 Width.addEventListener("click",showWidth);
-PixelDepth.addEventListener("click",showPixelDepth);
+Pixel.addEventListener("click",showPixelDepth);
 
 Length.addEventListener("click",showLength);
 State.addEventListener("click",showState);
 
 
 function showHref(){
-    var href = document.getElementsByClassName("badge")[0];
-    href.innerHTML = document.URL;
-    return href;
+    
+    Href.children[0].innerHTML = document.URL;
+    
     }
     
 function showProtocol(){
-    var protocol = document.getElementsByClassName("protocol-badge")[0];
-    protocol.innerHTML = location.protocol;
-    return protocol;
+   
+    Protocol.children[0].innerText  = location.protocol;
+    
     }
     
     function showHost(){
-        var host = document.getElementsByClassName("host-badge")[0];
-        host.innerHTML = location.host;
-        return host;
+        
+        Host.children[0].innerText = location.host;
+       
     }
     
     function showPort(){
-        var port = document.getElementsByClassName("port-badge")[0];
-        port.innerHTML = location.port;
-        return port;
+        Port.children[0].innerText = location.port;
     }
     
     function showHostName(){
-        var hostName = document.getElementsByClassName("hostName-badge")[0];
-        hostName.innerHTML = location.hostname;
-        return hostName;
+        HostName.children[0].innerText = location.hostname;
     }
 
     function showAppName(){
-        var appName = document.getElementsByClassName("appName-badge")[0]
-        appName.innerHTML = window.navigator.appName;
-        return appName;
+        AppName.children[0].innerText = window.navigator.appName;
     }
     
     function showAppVersion(){
-        var appVersion = document.getElementsByClassName("appVersion-badge")[0]
-        appVersion.innerHTML = window.navigator.appVersion;
-        return appVersion;
+        AppVersion.children[0].innerText = window.navigator.appVersion;
     }
     
     function showPlatform(){
-        var platform = document.getElementsByClassName("platform-badge")[0]
-        platform.innerHTML = window.navigator.platform;
-        return platform;
+        Platform.children[0].innerText = window.navigator.platform;
     }
     
     function showLanguage(){
-        var language = document.getElementsByClassName("language-badge")[0]
-        language.innerHTML = window.navigator.language;
-        return language;
+        Language.children[0].innerText = window.navigator.language;
     }
     
     function showCookieEnabled(){
-        var cookie = document.getElementsByClassName("cookieEnabled-badge")[0]
-        cookie.innerHTML = window.navigator.cookieEnabled;
-        return cookie;
+        Cookie.children[0].innerText = window.navigator.cookieEnabled;
     }
 
     function showHeight(){
-        var height = document.getElementsByClassName("badge-height")[0];
-        height.innerHTML = window.outerHeight;
-        return height;
+        Height.children[0].innerText = window.outerHeight;
     }
     
     function showWidth(){
-        var width = document.getElementsByClassName("badge-width")[0];
-        width.innerHTML = window.outerWidth;
-        return width;
+        Width.children[0].innerText = window.outerWidth;
     }
     
     function showPixelDepth(){
-        var pixel = document.getElementsByClassName("badge-pixelDepth")[0];
-        pixel.innerHTML = screen.pixelDepth;
-        return pixel;
+        Pixel.children[0].innerText = screen.pixelDepth;
     }
 
     function showLength(){
-        var length = document.getElementsByClassName("badge-length")[0];
-        length.innerHTML = history.length;
-        return length;
+        Length.children[0].innerText = history.length;
     }
     
     function showState(){
-        var state = document.getElementsByClassName("badge-state")[0];
-        state.innerHTML = history.state;
-        return state;
+        State.children[0].innerText = history.state;
     }
 
 
