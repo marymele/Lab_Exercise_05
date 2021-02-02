@@ -50,6 +50,12 @@ function addNewTask(e){
      li.appendChild(link);
      // Append to ul 
      taskList.appendChild(li);
+
+     taskInput.value ="";
+    let date = new Date().getTime();
+    li.dataset.date = date;
+
+    orderItems();
  
      
  }
@@ -107,6 +113,30 @@ function removeTask(e) {
 
     }
 
+}
+
+function orderItems() {
+    let tasks = document.querySelectorAll('.collection-item');
+    let dates = []
+    tasks.forEach(task => {
+        dates.push(task.dataset.date)
+    });
+
+    dates.sort()
+    if (order.value=='decend') {
+        dates.reverse()
+    }
+
+    clearAllTasks()
+    for (let date = 0; date < dates.length; date++) {
+        for (let task = 0; task < tasks.length; task++) {
+            if (dates[date]==tasks[task].dataset.date) {
+                taskList.appendChild(tasks[task]);
+            }
+            
+        }
+        
+    }
 }
 
 

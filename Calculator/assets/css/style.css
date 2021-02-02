@@ -1,0 +1,18 @@
+body {
+    height: max-content;
+    width: max-content;
+
+}
+
+#screen {
+    height: 100px;
+    width: 220px;
+    
+    background-color: antiquewhite;
+}
+
+button {
+    height:30px ;
+    width: 70px;
+}
+
