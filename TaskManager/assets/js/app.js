@@ -111,6 +111,15 @@ function removeTask(e) {
 
 
 
+// Reload Page Function 
+function reloadPage() {
+    //using the reload fun on location object 
+    location.reload();
+}
+
+
+
+
 
 
 
